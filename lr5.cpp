@@ -1,4 +1,4 @@
-﻿// lr5.cpp
+// lr5.cpp
 #include <iostream>
 #include <iomanip>
 using namespace std;
@@ -30,7 +30,7 @@ public:
             w = 1;
             q = q + 1;
         }
-        cout << "\n";
+        cout << endl;
     }
 
     void print()
@@ -40,7 +40,7 @@ public:
             cout << ">>> ";
             for (j = 0; j < col; j++)
             {
-                cout << arr[i][j] << " ";
+                cout << setw(3) << arr[i][j] << " ";
             }
             cout << endl;
         }
@@ -59,7 +59,7 @@ public:
         for (i = 0; i < row; i++) {
             for (j = 0; j < col; j++) {
                 arr[i][j] = obj1.arr[i][j] + obj2.arr[i][j];
-                cout << arr[i][j] << ' ';
+                cout << setw(3) << arr[i][j] << ' ';
             }
             cout << endl;
         }
@@ -75,7 +75,7 @@ public:
         for (i = 0; i < row; i++) {
             for (j = 0; j < col; j++) {
                 arr[i][j] = obj1.arr[i][j] - obj2.arr[i][j];
-                cout << arr[i][j] << ' ';
+                cout << setw(3) << arr[i][j] << ' ';
             }
             cout << endl;
         }
@@ -94,7 +94,7 @@ public:
                 for (int k = 0; k < col; k++) {
                     arr[i][j] += obj1.arr[i][k] * obj2.arr[k][j];
                 }
-                cout << arr[i][j] << ' ';
+                cout << setw(3) << arr[i][j] << ' ';
             }
             cout << endl;
         }
@@ -110,7 +110,7 @@ public:
         for (i = 0; i < row; i++) {
             for (j = 0; j < col; j++) {
                 arr[i][j] = obj1.arr[j][i];
-                cout << arr[i][j] << ' ';
+                cout << setw(3) << arr[i][j] << ' ';
             }
             cout << endl;
         }
@@ -140,7 +140,7 @@ public:
         for (i = 0; i < row; i++) {
             for (j = 0; j < col; j++) {
                 arr[i][j] = obj1.arr[i][j] * number;
-                cout << arr[i][j] << ' ';
+                cout << setw(3) << arr[i][j] << ' ';
             }
             cout << endl;
         }
@@ -166,7 +166,7 @@ public:
         //Выводим на экран матрицу
         for (i = 0; i < row; i++) {
             for (j = 0; j < col; j++) {
-                cout << arr[i][j] << ' ';
+                cout << setw(3) << arr[i][j] << ' ';
             }
             cout << endl;
         }
@@ -185,7 +185,7 @@ public:
                 for (int k = 0; k < col; k++) {
                     arr[i][j] += obj1.arr[i][k] * obj1.arr[k][j];
                 }
-                cout << arr[i][j] << ' ';
+                cout << setw(3) << arr[i][j] << ' ';
             }
             cout << endl;
         }
@@ -229,14 +229,12 @@ int main()
     Operation_inverse_matrix inverse_matrix;
     Operation_exponentiation exponentiation;
 
-    cout << "\n>>>Матрица A\n";
-    A.print();
-    cout << "\n>>>Матрица B\n";
-    B.print();
+    cout << "\n>>>Матрица A\n"; A.print();
+    cout << "\n>>>Матрица B\n"; B.print();
 
-    //menu();
+    menu();
+
     int x, y, number;
-
     cout << "\n>>>Выберете опцию в меню: "; cin >> x;
     if (x == 1)
     {
@@ -274,8 +272,8 @@ int main()
     }
     else if (x == 6)
     {
-        cout << "\n>>> Умножение матрицы А или В на число\n";
-        cout << ">>>Выберите матрицу 1 или 2 : "; cin >> y;
+        cout << "\n>>>Умножение матрицы А или В на число\n";
+        cout << "\n>>>Выберите матрицу 1 или 2 : "; cin >> y;
         cout << "\n>>>На какое цисло вы хотите умножить? "; cin >> number;
         if (y == 1)
             multiplication_by_number.Multiplication_by_number(A, row, col, number);
@@ -285,7 +283,7 @@ int main()
     else if (x == 7)
     {
         cout << "\n>>>Нахождение обратной матрицы алгоритм\n";
-        cout << ">>>Выберите матрицу 1 или 2: "; cin >> y;
+        cout << "\n>>>Выберите матрицу 1 или 2: "; cin >> y;
         if (y == 1)
             inverse_matrix.Inverse_matrix(A, row, col);
 
@@ -295,7 +293,7 @@ int main()
     else if (x == 8)
     {
         cout << "\n>>>Возведение в степень матрицы\n";
-        cout << ">>>Выберите матрицу 1 или 2: "; cin >> y;
+        cout << "\n>>>Выберите матрицу 1 или 2: "; cin >> y;
         if (y == 1)
             exponentiation.Exponentiation(A, row, col);
 

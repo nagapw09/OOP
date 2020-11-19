@@ -1,4 +1,4 @@
-// lr5.cpp
+// lr5.cpp Нелепа сдесь был
 #include <iostream>
 #include <iomanip>
 using namespace std;
